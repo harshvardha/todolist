@@ -1,13 +1,161 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #6983aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* #root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+
+.App {
+  width: 390px;
+  height: 650px;
+  border: 0px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 5px 15px -7px rgba(0, 0, 0, 0.5), 0px -2px 15px -7px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  background-color: #9966ff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.header h1 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 36px;
+  text-align: center;
+  padding: 15px 9px 9px 9px;
+}
+
+.additem {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.additem input[type="text"] {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-width: 2px;
+  border-color: #9966ff;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Josefin Sans";
+  outline: none;
+  color: #b3b3b3;
+  width: 200px;
+}
+
+::placeholder {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Josefin Sans";
+  color: #b3b3b3;
+}
+
+.additem--button {
+  width: 40px;
+  height: 40px;
+  background-color: #9966ff;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 30px;
+  padding: 4.5px;
+  margin-bottom: 5px;
+  outline: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.additem--button:hover {
+  background-color: #00cc00;
+}
+
+.additem--button:active {
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #e6e6e6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9966ff;
+  border-radius: 10px;
+}
+
+.itemsList ul {
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+  margin-top: 30px;
+  list-style: none;
+  overflow: auto;
+}
+
+.itemsList--item {
+  margin-left: 30px;
+}
+
+.listItem {
+  display: flex;
+  column-gap: 20px;
+  justify-content: flex-start;
+}
+
+.listItem--button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #9966ff;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  border-radius: 50%;
+  padding-left: 1.3px;
+  padding-right: 0.88px;
+}
+
+.listItem--button:hover {
+  background-color: #e60000;
+}
+
+.listItem--button:active {
+  box-shadow: inset 0px 10px 4px rgba(0, 0, 0, 0.2);
+}
+
+.listItem--name {
+  font-size: 23px;
+  font-weight: 700;
+  color: #b3b3b3;
+  margin-top: 5px;
 }
