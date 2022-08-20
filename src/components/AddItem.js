@@ -1,8 +1,10 @@
 import { AiOutlinePlus } from "react-icons/ai"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { TodoListContext } from "../context/TodoListContext"
 
-const AddItem = ({ setItems }) => {
+const AddItem = () => {
     const [item, setItem] = useState("")
+    const { actions } = useContext(TodoListContext)
     return (
         <div className="additem">
             <input
@@ -11,7 +13,14 @@ const AddItem = ({ setItems }) => {
                 value={item}
                 onChange={(event) => setItem(event.target.value)}
             />
-            <button className="additem--button" type="button" onClick={() => setItems(prevState => [...prevState, item])}><AiOutlinePlus /></button>
+            <button className="additem--button" type="button" onClick={() => {
+                actions.addItem(item)
+                setItem("")
+            }
+            }
+            >
+                <AiOutlinePlus />
+            </button>
         </div>
     )
 }

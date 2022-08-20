@@ -1,9 +1,9 @@
 import { MdOutlineClose } from "react-icons/md"
 
-const ListItem = ({ itemName }) => {
+const ListItem = ({ itemName, removeItem, id }) => {
     return (
         <div className="listItem">
-            <button className="listItem--button" type="button"><MdOutlineClose /></button>
+            <button className="listItem--button" type="button" onClick={() => removeItem(id)}><MdOutlineClose /></button>
             <p className="listItem--name">{itemName}</p>
         </div>
     )

@@ -1,11 +1,15 @@
 import ListItem from "./ListItem"
+import { useContext } from "react"
+import { TodoListContext } from "../context/TodoListContext"
 
-const ItemsList = ({ items }) => {
-    const listItems = items.map((item, index) => {
+const ItemsList = () => {
+    const { itemsList, actions } = useContext(TodoListContext)
+
+    const listItems = itemsList.map((item, index) => {
         return (
             <div className="itemsList--item">
                 <li>
-                    <ListItem key={index} itemName={item} />
+                    <ListItem key={index} itemName={item} id={index} removeItem={actions.removeItem} />
                 </li>
             </div>
         )
