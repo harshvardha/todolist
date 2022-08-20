@@ -1,12 +1,17 @@
 import { AiOutlinePlus } from "react-icons/ai"
+import { useState } from "react"
 
-const AddItem = () => {
+const AddItem = ({ setItems }) => {
+    const [item, setItem] = useState("")
     return (
         <div className="additem">
-            <input type="text"
+            <input
+                type="text"
                 placeholder="Add Item"
+                value={item}
+                onChange={(event) => setItem(event.target.value)}
             />
-            <button className="additem--button" type="button"><AiOutlinePlus /></button>
+            <button className="additem--button" type="button" onClick={() => setItems(prevState => [...prevState, item])}><AiOutlinePlus /></button>
         </div>
     )
 }
